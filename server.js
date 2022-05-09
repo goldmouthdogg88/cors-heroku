@@ -31,8 +31,8 @@ app.get("/json", cors(), (req, res) => {
 });
 
 app.post("/cangetdata", cors(), (req, res) => {
-  res.json({ msg:})
-})
+  res.json({ msg: "Yes I can get data!" });
+});
 
 app.post("/web_history", cors(), (req, res) => {
   console.log(req.body);
