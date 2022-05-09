@@ -14,13 +14,13 @@ app.use(
   })
 );
 
-var key = fs.readFileSync("./selfsigned.key");
-var cert = fs.readFileSync("./selfsigned.crt");
+// var key = fs.readFileSync("./selfsigned.key");
+// var cert = fs.readFileSync("./selfsigned.crt");
 
-var options = {
-  key: key,
-  cert: cert,
-};
+// var options = {
+//   key: key,
+//   cert: cert,
+// };
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
