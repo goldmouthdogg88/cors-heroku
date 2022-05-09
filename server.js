@@ -30,6 +30,10 @@ app.get("/json", cors(), (req, res) => {
   res.json({ msg: "This is CORS-enabled for a single route." });
 });
 
+app.post("/cangetdata", cors(), (req, res) => {
+  res.json({ msg:})
+})
+
 app.post("/web_history", cors(), (req, res) => {
   console.log(req.body);
 
