@@ -3,7 +3,7 @@ const req = require("express/lib/request");
 var cors = require("cors");
 //const https = require("https");
 const app = express();
-const port = process.env.port || 5000;
+const PORT = process.env.PORT || 5000;
 const fs = require("fs");
 app.use(express.static(__dirname + "/public"));
 
@@ -59,6 +59,6 @@ app.post("/web_history", cors(), (req, res) => {
 //   console.log(`Server starting on port : ${port}`);
 // });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`);
 });
