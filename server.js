@@ -3,7 +3,7 @@ const req = require("express/lib/request");
 var cors = require("cors");
 const https = require("https");
 const app = express();
-const port = 5000;
+const port = process.env.port || 5000;
 const fs = require("fs");
 app.use(express.static(__dirname + "/public"));
 
