@@ -53,8 +53,12 @@ app.post("/web_history", cors(), (req, res) => {
   res.send("request done...");
 });
 
-var server = https.createServer(options, app);
+// var server = https.createServer(options, app);
 
-server.listen(port, () => {
-  console.log(`Server starting on port : ${port}`);
+// server.listen(port, () => {
+//   console.log(`Server starting on port : ${port}`);
+// });
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
 });
