@@ -1,0 +1,36 @@
+list your apps
+
+USAGE
+  $ heroku apps
+
+OPTIONS
+  -A, --all          include apps in all teams
+  -p, --personal     list apps in personal account when a default team is set
+  -s, --space=space  filter by space
+  -t, --team=team    team to use
+  --json             output in json format
+
+EXAMPLES
+  $ heroku apps
+  === My Apps
+  example
+  example2
+
+  === Collaborated Apps
+  theirapp   other@owner.name
+
+COMMANDS
+  apps:create     creates a new app
+  apps:destroy    permanently destroy an app
+  apps:errors     view app errors
+  apps:favorites  list favorited apps
+  apps:info       show detailed app information
+  apps:open       open the app in a web browser
+  apps:rename     rename an app
+  apps:stacks     show the list of available stacks
+  apps:join       add yourself to a team app
+  apps:leave      remove yourself from a team app
+  apps:lock       prevent team members from joining an app
+  apps:transfer   transfer applications to another user or team
+  apps:unlock     unlock an app so any team member can join
+
