@@ -53,7 +53,7 @@ app.post("/web_history", cors(), (req, res) => {
   bufferString = buffer.toString();
   bufferObject = JSON.parse(bufferString);
 
-  console.log(bufferObject);
+  console.log("BUFFER-OBJECT/data.json:", bufferObject);
 
   bufferObject.push(req.body);
   var jsonBuffer = JSON.stringify(bufferObject, null, 4);
