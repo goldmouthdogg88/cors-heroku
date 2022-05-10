@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/data", (req, res) => {
-  res.sendFile(__dirname, "./data.json");
+  res.sendFile(__dirname, "data.json");
   // res.json({ msg: "You call /data" });
 });
 
