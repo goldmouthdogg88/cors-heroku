@@ -58,7 +58,13 @@ app.post("/web_history", cors(), (req, res) => {
     console.log("File written sucessfully");
   });
 
-  res.send("request done...");
+  // res.send("request done...");
+  fileName = "./data.json";
+  buffer = fs.readFileSync(fileName);
+  bufferString = buffer.toString();
+  bufferObject = JSON.parse(bufferString);
+
+  res.json({ data: bufferObject });
 });
 
 // var server = https.createServer(options, app);
