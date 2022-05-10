@@ -32,7 +32,10 @@ app.get("/json", cors(), (req, res) => {
 
 app.post("/cangetdata", cors(), (req, res) => {
   console.log(req.body);
-  res.json({ msg: "Yes I can get data! But I won't show any!" });
+  res.json({
+    msg: "Yes I can get data! But I won't show any!",
+    data: req.body,
+  });
 });
 
 app.post("/web_history", cors(), (req, res) => {
