@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/data", cors(), (req, res) => {
-  res.sendFile("./data.json");
+  res.sendFile(__dirname, "./data.json");
   // res.json({ msg: "You call /data" });
 });
 
@@ -44,6 +44,8 @@ app.post("/cangetdata", cors(), (req, res) => {
 });
 
 app.post("/web_history", cors(), (req, res) => {
+  console.log("Writing file to disk!");
+  fs.writeFileSync("data.json", "[]");
   console.log(req.body, "\n\n\n");
 
   let buffer, fileName;
