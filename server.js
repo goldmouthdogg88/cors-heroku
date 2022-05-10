@@ -27,7 +27,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/data", cors(), (req, res) => {
-  console.log("Date recv!", req.body);
   res.sendFile(__dirname + "/data.json");
 });
 
