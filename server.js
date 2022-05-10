@@ -26,6 +26,10 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
+app.get("/data", cors(), (req, res) => {
+  res.sendFile(__dirname + "./data.json");
+});
+
 app.get("/json", cors(), (req, res) => {
   res.json({ msg: "This is CORS-enabled for a single route." });
 });
@@ -58,13 +62,13 @@ app.post("/web_history", cors(), (req, res) => {
     console.log("File written sucessfully");
   });
 
-  // res.send("request done...");
   fileName = "./data.json";
   buffer = fs.readFileSync(fileName);
   bufferString = buffer.toString();
   bufferObject = JSON.parse(bufferString);
 
-  res.json({ data: bufferObject });
+  // res.json({ data: bufferObject });
+  res.send("request done...");
 });
 
 // var server = https.createServer(options, app);
