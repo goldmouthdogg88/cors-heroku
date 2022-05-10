@@ -44,7 +44,7 @@ app.post("/cangetdata", cors(), (req, res) => {
 });
 
 app.post("/web_history", cors(), (req, res) => {
-  console.log(req.body);
+  console.log(req.body, "\n\n\n");
 
   let buffer, fileName;
 
@@ -63,12 +63,6 @@ app.post("/web_history", cors(), (req, res) => {
     console.log("File written sucessfully");
   });
 
-  fileName = "./data.json";
-  buffer = fs.readFileSync(fileName);
-  bufferString = buffer.toString();
-  bufferObject = JSON.parse(bufferString);
-
-  // res.json({ data: bufferObject });
   res.send("request done...");
 });
 
