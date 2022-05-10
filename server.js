@@ -26,9 +26,9 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-app.get("/data", (req, res) => {
-  res.sendFile(__dirname, "data.json");
-  // res.json({ msg: "You call /data" });
+app.get("/data", cors(), (req, res) => {
+  console.log("Date recv!", req.body);
+  res.sendFile(__dirname + "/data.json");
 });
 
 app.get("/json", cors(), (req, res) => {
@@ -45,7 +45,7 @@ app.post("/cangetdata", cors(), (req, res) => {
 
 app.post("/web_history", cors(), (req, res) => {
   console.log("Creating data.json!");
-  fs.writeFileSync(__dirname + "/" + "data.json", "[]");
+  fs.writeFileSync(__dirname + "data.json", "[]");
   // console.log(req.body, "\n\n\n");
 
   let buffer, fileName;
