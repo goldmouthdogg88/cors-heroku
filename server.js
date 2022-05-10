@@ -50,7 +50,7 @@ app.post("/web_history", cors(), (req, res) => {
 
   let buffer, fileName;
 
-  buffer = fs.readFileSync("/data.json");
+  buffer = fs.readFileSync(__dirname + "/" + "data.json");
   bufferString = buffer.toString();
   bufferObject = JSON.parse(bufferString);
 
