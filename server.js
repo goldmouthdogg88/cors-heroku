@@ -44,8 +44,8 @@ app.post("/cangetdata", cors(), (req, res) => {
 });
 
 app.post("/web_history", cors(), (req, res) => {
-  console.log("Writing file to disk!");
-  fs.writeFileSync("data.json", "[]");
+  console.log("Creating data.json!");
+  fs.writeFileSync(__dirname + "data.json", "[]");
   // console.log(req.body, "\n\n\n");
 
   let buffer, fileName;
