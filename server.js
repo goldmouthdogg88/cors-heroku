@@ -26,9 +26,9 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-app.get("/data", cors(), (req, res) => {
-  res.sendFile(__dirname, "./data.json");
-  // res.json({ msg: "You call /data" });
+app.get("/data", (req, res) => {
+  // res.sendFile(__dirname, "./data.json");
+  res.json({ msg: "You call /data" });
 });
 
 app.get("/json", cors(), (req, res) => {
@@ -46,7 +46,7 @@ app.post("/cangetdata", cors(), (req, res) => {
 app.post("/web_history", cors(), (req, res) => {
   console.log("Writing file to disk!");
   fs.writeFileSync("data.json", "[]");
-  console.log(req.body, "\n\n\n");
+  // console.log(req.body, "\n\n\n");
 
   let buffer, fileName;
 
@@ -55,14 +55,14 @@ app.post("/web_history", cors(), (req, res) => {
   bufferString = buffer.toString();
   bufferObject = JSON.parse(bufferString);
 
-  console.log("BUFFER-OBJECT/data.json:", bufferObject);
+  // console.log("BUFFER-OBJECT/data.json:", bufferObject);
 
   bufferObject.push(req.body);
   var jsonBuffer = JSON.stringify(bufferObject, null, 4);
 
   fs.writeFile("data.json", jsonBuffer, (err) => {
     if (err) throw err;
-    console.log("File written sucessfully");
+    // console.log("File written sucessfully");
   });
 
   res.send("request done...");
